@@ -1,7 +1,55 @@
-.current {
-	color: green;
+a {
+	text-decoration: none;
 }
 
 .nobull {
 	list-style-type: none;
+}
+
+.current {
+	text-decoration: underline overline;
+}
+
+.nav {
+	background: blue;
+	display: flex;
+}
+
+.default {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.footer {
+	background: purple;
+	flex-direction: row;
+	overflow: hidden;
+}
+
+.header {
+	background: green;
+}
+
+@media all and (min-width: 860px) {
+
+}
+
+/*--Responsive--*/
+@media screen and (max-width: 1150px) {
+
+}
+
+@media screen and (max-width: 860px) {
+	.nav-container {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.nav-link-ul {
+		display: flex;
+		flex-direction: row;
+	}
 }
