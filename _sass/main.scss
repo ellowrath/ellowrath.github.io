@@ -2,17 +2,17 @@ a {
 	text-decoration: none;
 }
 
-.nobull {
-	list-style-type: none;
-}
-
 .current {
 	text-decoration: underline overline;
 }
 
 .nav {
-	background: blue;
+	background: #4d4d4d;
 	display: flex;
+	width: 100%;
+	a:link, a:visited {
+		color: #cccccc;
+	}
 }
 
 .default {
@@ -28,7 +28,6 @@ a {
 	flex-direction: row;
 	overflow: hidden;
 }
-
 .header {
 	background: green;
 }
@@ -43,13 +42,17 @@ a {
 }
 
 @media screen and (max-width: 860px) {
-	.nav-container {
-		display: flex;
-		flex-direction: row;
-	}
 
 	.nav-link-ul {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-around;
+		list-style: none;
+		margin: 0;
+	}
+
+	.nav-link-li {
+		text-decoration: none;
+		padding: 10%;
 	}
 }
