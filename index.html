@@ -1,5 +1,19 @@
 ---
 layout: default
-title: Home
+title: a clever title
 ---
-<h1>{{ "Hello World!" | downcase }}</h1>
+<h1>{{ page.title }}</h1>
+
+<div class="blog-container">
+  {% assign base = index | times: 4 %}
+  {% assign off = base | plus: 4 %}
+  {% for i in (base..off) %}
+  <div class="blog-blurb-container">
+    <a href="{{ site.posts[i].url }}">
+      <div class="post-title"><h2>{{ site.posts[i].title }}</h2></div>
+      <div class="post-excerpt">{{ site.posts[i].excerpt }}</div>
+    </a>
+  </div>
+  {% endfor %}
+  <!-- Set up the pagination links -->
+</div>

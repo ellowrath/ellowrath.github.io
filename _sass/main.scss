@@ -1,18 +1,31 @@
-a {
-	text-decoration: none;
-}
+.pagination a, .pagination span {
+    padding: 7px 18px;
+    border: 1px solid #eee;
+    margin-left: -2px;
+    margin-right: -2px;
+    background-color: #ffffff;
+    display: inline-block;
+  }
+
+.pagination a {
+    &:hover {
+        background-color: #f1f1f1;
+        color: #333;
+    }
+ }
+
+.pagination {
+    text-align: center;
+ }
 
 .current {
 	text-decoration: underline overline;
 }
 
-.nav {
-	background: #4d4d4d;
+.header {
 	display: flex;
-	width: 100%;
-	a:link, a:visited {
-		color: #cccccc;
-	}
+	flex-direction: column;
+	background: #a1a1a1;
 }
 
 .default {
@@ -24,16 +37,44 @@ a {
 }
 
 .footer {
-	background: purple;
+	display: flex;
 	flex-direction: row;
+	align-items: flex-end;
 	overflow: hidden;
+	.website, .copyright, .github, .email {
+		padding-right: 5%;
+	}
 }
-.header {
-	background: green;
+
+.nav {
+	background: #4d4d4d;
+	display: flex;
+	flex: 0 1 auto;
+	width: auto;
+	a {
+		display: flex;
+		flex-direction: row;
+		text-decoration: none;
+		padding: 10%;
+	}
+	a:link, a:visited {
+		color: #cccccc;
+	}
+}
+
+.nav-link-container {
+	display: flex;
 }
 
 @media all and (min-width: 860px) {
 
+	.nav {
+		justify-content: flex-end;
+	}
+
+	.nav-link-container {
+		padding-right: 10%;
+	}
 }
 
 /*--Responsive--*/
@@ -43,16 +84,42 @@ a {
 
 @media screen and (max-width: 860px) {
 
-	.nav-link-ul {
-		display: flex;
-		flex-direction: row;
+	.nav {
 		justify-content: space-around;
-		list-style: none;
-		margin: 0;
 	}
 
-	.nav-link-li {
-		text-decoration: none;
-		padding: 10%;
+	.footer {
+		.github, .email {
+			display: none;
+		}
 	}
+
+	.blog-container {
+		display:flex;
+		flex-direction: column;
+	}
+
+	.blog-blurb-container {
+		padding-bottom: 2%;
+		a {
+			display: block;
+			text-decoration: none;
+		}
+		a:link, a:visited {
+			color: black;
+		}
+	}
+
+	.post-title {
+		background: #cccccc;
+		padding-top: .2em;
+		padding-bottom: .1em;
+	}
+
+	.post-excerpt {
+		background: ghostwhite;
+		padding-top: .2em;
+		padding-bottom: .1em;
+	}
+
 }
