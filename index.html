@@ -3,6 +3,7 @@ layout: default
 title: a clever title
 ---
 <h1>{{ page.title }}</h1>
+{% assign index = 0 %}
 
 <div class="blog-container">
   {% assign base = index | times: 4 %}
@@ -16,4 +17,10 @@ title: a clever title
   </div>
   {% endfor %}
   <!-- Set up the pagination links -->
+  <div class="pagination-links-container">
+    <a href="#">
+      {% index | plus: 1 %}
+      Next
+    </a>
+  </div>
 </div>
